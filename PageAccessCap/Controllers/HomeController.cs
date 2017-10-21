@@ -5,10 +5,19 @@ namespace PageAccessCap.Controllers
 {
     public class HomeController : BaseController
     {
-        [PageAccess(threshold: 3)]
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        [PageAccess(threshold: 3)]
+        public ActionResult Login()
+        {
+            var model = string.Empty;
+
+            return Json(model);
         }
     }
 }

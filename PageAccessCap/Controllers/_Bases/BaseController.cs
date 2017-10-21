@@ -20,7 +20,7 @@ namespace PageAccessCap.Controllers
 
                 if (filterContext.RequestContext.HttpContext.Request.IsAjaxRequest())
                 {
-                    //this.OnAjaxError(filterContext);
+                    this.OnAjaxError(filterContext);
                 }
                 else
                 {
@@ -65,6 +65,22 @@ namespace PageAccessCap.Controllers
                 filterContext.HttpContext.Response.TrySkipIisCustomErrors = true;
                 filterContext.ExceptionHandled = true;
             }
+        }
+
+        protected virtual void OnAjaxError(ExceptionContext filterContext)
+        {
+            var hex = filterContext.Exception as HttpException;
+
+            int errCode;
+
+            if (hex != null)
+                errCode = hex.GetHttpCode();
+            else
+                errCode = (int)HttpStatusCode.InternalServerError;
+
+            filterContext.HttpContext.Response.Clear();
+            filterContext.HttpContext.Response.StatusCode = errCode;
+            filterContext.HttpContext.Response.Write(filterContext.Exception.Message);
         }
 
     }

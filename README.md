@@ -1,4 +1,4 @@
-# Page-Access Limiter a.k.a. page-accesscap
+# Page-access Limiter a.k.a. page-accesscap
 I recently needed to limit access frequency to a specific page/web method when the visit count hits certain threshold, so I came up with this approach of caching the hit count and implementing an `IActionFilter` on a `FilterAttribute` to intercept the requests and act on them accordingly.
 
 I believe this is also one known step to overcome the infamous [DDoS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack). Now this approach I'm talking about handles two types of user:
