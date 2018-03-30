@@ -5,7 +5,7 @@ I believe this is also one known step to overcome the infamous [DDoS attack](htt
 * Potentially malicious users
 * Regular users constantly hitting certain page or invoking certain method (with no bad intention of course)
 
-When it is the former one, the way I like to handle this is I will redirect the bad guy to some external [warning page](https://legalpiracy.wordpress.com/2011/01/10/ddos-attacks-and-the-law) and drive them out at once! Otherwise, prompt them to come back later after some coffee break.
+When it is the former one, the way I would handle this in a slightly distinct manner is I will redirect the bad guy to some external [warning page](https://legalpiracy.wordpress.com/2011/01/10/ddos-attacks-and-the-law) and drive them out at once! Otherwise, prompt them to come back later after some coffee break.
 
 ### Usage and demo
-On the demo login page, simply keep on hitting the login button consecutively (threshold is configurable) and get warned about the login attempt cap. Persistent enough? Keep on doing it and you'll be taken to this legal piracy page!
+On the demo login page, simply keep on hitting the login button consecutively (threshold is configurable) and get warned about the login attempt cap. Persistent enough? Keep on doing it and get a revelation!
